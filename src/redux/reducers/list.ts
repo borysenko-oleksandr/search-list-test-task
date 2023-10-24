@@ -54,12 +54,12 @@ const ListSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchList.fulfilled, (state, action) => {
-      state.items = action.payload.data.items.materials;
+      state.items = action.payload?.data?.items?.materials;
       state.page = state.page + 1;
-      state.total = action.payload.data.total;
+      state.total = action.payload?.data?.total;
     });
     builder.addCase(fetchMoreList.fulfilled, (state, action) => {
-      state.items.push(...action.payload.data.items.materials);
+      state.items.push(...action.payload?.data?.items?.materials);
       state.page = state.page + 1;
     });
   },
