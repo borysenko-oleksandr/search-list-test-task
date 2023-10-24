@@ -53,7 +53,7 @@ const List: React.FC<Props> = () => {
   }, []);
 
   const onEndReached = useCallback(() => {
-    if (total === list.length) {
+    if (total === list?.length) {
       return null;
     }
     dispatch(fetchMoreList());
@@ -77,7 +77,7 @@ const List: React.FC<Props> = () => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         onEndReached={onEndReached}
-        hasNextPage={total !== list.length}
+        hasNextPage={total !== list?.length}
       >
         <TextInput
           style={styles.input}

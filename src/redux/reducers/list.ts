@@ -59,7 +59,7 @@ const ListSlice = createSlice({
       state.total = action.payload?.data?.total;
     });
     builder.addCase(fetchMoreList.fulfilled, (state, action) => {
-      state.items.push(...action.payload?.data?.items?.materials);
+      state.items.push(...action.payload?.data?.items.materials);
       state.page = state.page + 1;
     });
   },
