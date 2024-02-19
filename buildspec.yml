@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 18
 #      android: 29
-      java: corretto11
+      java: corretto17
     commands:
       - export ANDROID_TOOLS_FILENAME="commandlinetools-linux-8512546_latest.zip"
       - wget https://dl.google.com/android/repository/$ANDROID_TOOLS_FILENAME -P ~ > /dev/null
