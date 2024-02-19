@@ -21,12 +21,12 @@ phases:
   pre_build:
     commands:
       # install dependencies
-      - yarn install
+      - npm install
 
   build:
     commands:
       # run build script
-      - yarn android:build
+      - npm run android:build
 
 artifacts:
   files:
