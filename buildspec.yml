@@ -4,12 +4,9 @@ phases:
   install:
     runtime-versions:
       nodejs: 16
-      android: 29
+#      android: 29
       java: corretto11
-
-  pre_build:
     commands:
-      # install dependencies
       - export ANDROID_TOOLS_FILENAME="commandlinetools-linux-8512546_latest.zip"
       - wget https://dl.google.com/android/repository/$ANDROID_TOOLS_FILENAME -P ~ > /dev/null
       - unzip ~/$ANDROID_TOOLS_FILENAME -d ~ > /dev/null 2>&1
@@ -20,6 +17,10 @@ phases:
       - yes | sdkmanager --licenses > /dev/null
       - sdkmanager "platform-tools" "platforms;android-31" > /dev/null
       - sdkmanager "build-tools;31.0.0" > /dev/null
+
+  pre_build:
+    commands:
+      # install dependencies
       - yarn install
 
   build:
