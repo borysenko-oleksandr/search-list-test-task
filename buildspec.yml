@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+      android: 29
+      java: corretto21
+
+  pre_build:
+    commands:
+      # install dependencies
+      - yarn install
+
+  build:
+    commands:
+      # run build script
+      - yarn android:build
+
+artifacts:
+  files:
+    - android/app/build/outputs/apk/release/app-release.apk
