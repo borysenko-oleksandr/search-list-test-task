@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 18
       android: 29
-      java: corretto21
+      java: corretto11
 
   pre_build:
     commands:
